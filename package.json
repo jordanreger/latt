@@ -1,0 +1,19 @@
+{
+  "name": "latt",
+  "description": "A simple Lit Element (https://lit.dev) router ",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordanreger/latt.git"
+  },
+  "keywords": [],
+  "author": "Jordan Reger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanreger/latt/issues"
+  },
+  "homepage": "https://github.com/jordanreger/latt"
+}
