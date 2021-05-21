@@ -1,0 +1,25 @@
+{
+  "name": "latt",
+  "version": "0.0.1",
+  "description": "A simple Lit Element router",
+  "main": "router.js",
+  "module": "router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanreger/latt.git"
+  },
+  "author": "Jordan Reger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanreger/latt/issues"
+  },
+  "homepage": "https://github.com/jordanreger/latt#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.14.2"
+  }
+}
