@@ -16,7 +16,7 @@ export class Router extends LitElement {
   render() {
     global.from = this.path;
     if (window.location.pathname === this.path) {
-      return html`<slot></slot>`;
+      return html`<slot />`;
     } else {
       return null;
     }
