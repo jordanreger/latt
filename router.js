@@ -2,6 +2,19 @@ import { LitElement, html, css } from "lit-element";
 
 /* latt-router */
 export class Router extends LitElement {
+  render() {
+    global.routes = [];
+    for (var i = 0; i < this.shadowRoot.host.children.length; i++) {
+      if (this.shadowRoot.host.children[i].path) {
+        global.routes.push(this.shadowRoot.host.children[i].path);
+      }
+    }
+    return html`<slot />`;
+  }
+}
+
+/* latt-route */
+export class Route extends LitElement {
   static get properties() {
     return {
       path: { type: String }
@@ -23,7 +36,7 @@ export class Router extends LitElement {
   }
 }
 
-/* latt-router-redirect */
+/* latt-redirect */
 
 export class Redirect extends LitElement {
   static get properties() {
@@ -46,7 +59,7 @@ export class Redirect extends LitElement {
   }
 }
 
-/* latt-router-link */
+/* latt-link */
 
 export class Link extends LitElement {
   static get properties() {
@@ -74,9 +87,39 @@ export class Link extends LitElement {
   }
 }
 
+export class Catchall extends LitElement {
+  static get properties() {
+    return {
+      to: { type: String }
+    };
+  }
+
+  constructor() {
+    super();
+    this.to = "/";
+  }
+
+  render() {
+    var redirect = true;
+    for (var i = 0; i < global.routes.length; i++) {
+      if (
+        window.location.pathname === this.to ||
+        window.location.pathname === global.routes[i]
+      ) {
+        redirect = false;
+      }
+    }
+    if (redirect) {
+      window.location.href = this.to;
+    }
+  }
+}
+
 customElements.get("latt-router") ||
   customElements.define("latt-router", Router);
-customElements.get("latt-router-redirect") ||
-  customElements.define("latt-router-redirect", Redirect);
-customElements.get("latt-router-link") ||
-  customElements.define("latt-router-link", Link);
+customElements.get("latt-route") || customElements.define("latt-route", Route);
+customElements.get("latt-redirect") ||
+  customElements.define("latt-redirect", Redirect);
+customElements.get("latt-link") || customElements.define("latt-link", Link);
+customElements.get("latt-catch") ||
+  customElements.define("latt-catch", Catchall);
