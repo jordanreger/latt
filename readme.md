@@ -4,8 +4,6 @@ A simple [Lit Element](http://lit.dev) router. (latt: Swedish for "light")
 
 ## Installation
 
----
-
 ```jsx
 npm install latt
 ```
@@ -17,8 +15,6 @@ import "latt";
 ```
 
 ## Usage
-
----
 
 ### `<latt-router>`
 
@@ -129,8 +125,6 @@ customElements.get("app-root") || customElements.define("app-root", App);
 ```
 
 ## Contact
-
----
 
 [Message me on Discord](http://itslaunchti.me/discord) **(Quickest way)**
 
