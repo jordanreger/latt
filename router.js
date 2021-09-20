@@ -9,7 +9,6 @@ export class Router extends LitElement {
         global.routes.push(this.shadowRoot.host.children[i].path);
       }
     }
-    console.log(global.routes);
   }
   render() {
     return html`<slot />`;
