@@ -2,13 +2,16 @@ import { LitElement, html, css } from "lit-element";
 
 /* latt-router */
 export class Router extends LitElement {
-  render() {
+  firstUpdated(){
     global.routes = [];
     for (var i = 0; i < this.shadowRoot.host.children.length; i++) {
       if (this.shadowRoot.host.children[i].path) {
         global.routes.push(this.shadowRoot.host.children[i].path);
       }
     }
+    console.log(global.routes);
+  }
+  render() {
     return html`<slot />`;
   }
 }
