@@ -1,6 +1,6 @@
 {
   "name": "latt",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "A simple Lit Element router",
   "main": "router.js",
   "module": "router.js",
